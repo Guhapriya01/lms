@@ -7,12 +7,12 @@ export default class LibraryDetailsReadBookRoute extends Route {
 
     @action
     willTransition(transition) {
-        if (this.controller.userEnteredData && !confirm("Are you sure you want to abandon progress?")) {
+        if ((this.controller.email || this.controller.name) && !confirm("Are you sure you want to abandon progress?")) {
             transition.abort();
         }
         else {
-            this.controller.userEnteredData = false;
             this.controller.email = null;
+            this.controller.name = null;
         }
     }
 
@@ -25,7 +25,6 @@ export default class LibraryDetailsReadBookRoute extends Route {
                 return
             }
         });
-        console.log(book);
         if (!book) {
             this.router.transitionTo('not-found', "notfound");
         }

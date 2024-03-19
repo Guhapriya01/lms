@@ -2,10 +2,16 @@
 
 .box-view {
   border: 1px solid black;
-  width: 40%;
+  width: 42%;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
+  margin: 30px;
+  box-shadow: 4px 4px grey;
+}
 
-  /* box-shadow: 4px 4px grey; */
+.separate{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 40%;
+  padding: 25px;
 }

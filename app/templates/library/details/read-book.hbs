@@ -1,17 +1,13 @@
 {{page-title "ReadBook"}}
-<div align="center">
-    <p><b><u>BOOK DETAILS</u></b></p>
-    <h3>{{this.model.name}}</h3>
-    <p>Author : {{this.model.author}}</p>
-</div>
 
 <div align="center">
+    <h3>{{this.model.name}}</h3>
+
     <label for="name">Name</label>
-    <Input id="name" @type="text" {{on "change" (action "enteredData" )}} /><br><br>
+    <Input id="name" @value={{this.name}} @type="text" /><br><br>
 
     <label for="email">Email : </label>
-    <Input id="email" @value={{this.email}} @type="text" {{on "change" (action "enteredData" )}} /><br><br>
+    <Input id="email" @value={{this.email}} @type="text" /><br><br>
 
     <button type="button" {{on 'click' this.getBook}}>Get Book</button>
 </div>
-{{outlet}}

@@ -2,11 +2,11 @@
 
 <div align="center">
     {{#each this.model as |book|}}
-         <div class="box-view">
+        <div class="box-view">
             <h3>{{book.volumeInfo.title}}</h3>
             <p>Author : {{book.volumeInfo.authors}}</p>
             <p>Date of Publication : {{book.volumeInfo.publishedDate}}</p>
-         </div>
+        </div>
     {{/each}}
 </div>
 {{outlet}}

@@ -1,0 +1,12 @@
+<div align="center">
+    <h4><u>LIST OF BOOKS</u></h4>
+    Sort By Name 
+    <LinkTo @route="library.details.books" @query={{hash sort="asc"}}>Asc</LinkTo>
+    <LinkTo @route="library.details.books" @query={{hash sort="desc"}}>Desc</LinkTo>
+
+    {{#each this.sortedBooks as |book|}}
+        <div style="padding:15px">
+            <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
+        </div>
+    {{/each}}
+</div>

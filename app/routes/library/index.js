@@ -4,10 +4,8 @@ import { inject as service } from "@ember/service";
 export default class LibraryIndexRoute extends Route {
     @service('LibraryData') library;
 
-    model(){
-        this.library.data.forEach(element => {
-            console.log(element);
-        });
+    model(){  
+        // fetch('https://hub.dummyapis.com/delay?seconds=1').then(response =>this.library.data); 
         return this.library.data;
     }
 }

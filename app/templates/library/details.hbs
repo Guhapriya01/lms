@@ -1,2 +1,9 @@
-{{page-title "Details"}}
+<div align="center">
+    <div class="box-view">
+        <h2>{{this.model.name}}</h2>
+        <p>Location : {{this.model.location}}</p>
+        <p>Timing : {{this.model.timing}}</p>
+        <LinkTo @route="library.details.books" @replace={{true}}>Books Available</LinkTo>
+    </div>
+</div>
 {{outlet}}

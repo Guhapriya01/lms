@@ -1,5 +1,8 @@
-{{#each this.model as |lib|}}
-    <LinkTo @route="library.details" @model={{lib}}>{{lib.name}}</LinkTo>
-{{/each}}
-
-{{!-- {{log this.model}} --}}
+<div align="center">
+    <h1>Libraries</h1>
+    {{#each this.model as |lib|}}
+    <div style="padding:10px">
+        <LinkTo @route="library.details" @model={{lib.id}}>{{lib.name}}</LinkTo>
+    </div>
+    {{/each}}
+</div>

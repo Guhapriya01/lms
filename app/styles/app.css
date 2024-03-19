@@ -1,1 +1,11 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+.box-view {
+  border: 1px solid black;
+  width: 40%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+
+  /* box-shadow: 4px 4px grey; */
+}

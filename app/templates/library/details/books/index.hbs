@@ -6,12 +6,14 @@
     </div>
 </div>
 
-<ul style="margin: auto;width: 19%;">
-    {{#each this.sortedBooks as |book|}}
-    <div style="padding:15px">
-        <li>
-            <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
-        </li>
-    </div>
-    {{/each}}
-</ul>
+<div style="text-align: center;">
+    <ul class="myUL">
+        {{#each this.sortedBooks as |book|}}
+        <div style="padding:15px">
+            <li>
+                <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
+            </li>
+        </div>
+        {{/each}}
+    </ul>
+</div>

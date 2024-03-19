@@ -18,6 +18,7 @@ export default class LibraryDetailsBooksIndexController extends Controller {
                 return 1;
             }
           });
-        } else return this.model;
+        } 
+        return this.model;
     }
 }

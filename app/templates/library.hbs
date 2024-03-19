@@ -1,14 +1,2 @@
 {{page-title "Library"}}
-<div align="center" class="flex"> 
-    <div >
-        <h1>Libraries</h1>
-        {{#each this.model as |lib|}}
-        <div style="padding:10px">
-            <LinkTo @route="library.details" @model={{lib.id}}>{{lib.name}}</LinkTo>
-        </div>
-        {{/each}}
-    </div>
-    <div style="width:60%">
-        {{outlet}}
-    </div>
-</div>
+{{outlet}}

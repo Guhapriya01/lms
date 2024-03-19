@@ -2,23 +2,25 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 
 export default class LibraryDetailsBooksIndexController extends Controller {
-    queryParams =['sort'];
+  queryParams = ['sort'];
 
-    @tracked
-    sort=null;
+  @tracked sort = null;
 
-    get sortedBooks(){
-        let s = this.sort;
-        if (s) {
-          return this.model.sort((a, b) => {
-            if ( s=='asc' && a.name > b.name ){
-                return 1;
-            }
-            else if ( s=='desc' && a.name < b.name ){
-                return 1;
-            }
-          });
-        } 
-        return this.model;
+  get sortedBooks() {
+    
+    let s = this.sort;
+    
+    if (s) {
+      return this.model.sort((a, b) => {
+        if (s === 'asc') {
+          return a.name.localeCompare(b.name); 
+        } else if (s === 'desc') {
+          return b.name.localeCompare(a.name); 
+        } else {
+          return 0; 
+        }
+      });
     }
+    else return this.model;
+  }
 }

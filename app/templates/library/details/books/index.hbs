@@ -4,10 +4,14 @@
         <LinkTo @route="library.details.books" @query={{hash sort="asc" }}>Ascending</LinkTo>
         <LinkTo @route="library.details.books" @query={{hash sort="desc" }}>Descending</LinkTo>
     </div>
+</div>
 
+<ul style="margin: auto;width: 19%;">
     {{#each this.sortedBooks as |book|}}
     <div style="padding:15px">
-        <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
+        <li>
+            <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
+        </li>
     </div>
     {{/each}}
-</div>
+</ul>

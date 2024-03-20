@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { pushObject, sortBy } from '@ember/array'; 
+import { sortBy } from '@ember/array'; 
 
 export default class LibraryDetailsBooksIndexRoute extends Route {
     queryParams = {
@@ -10,7 +10,7 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
     model(params) {
         let s = params.sort;
         let books = this.modelFor('library.details').books.slice();
-        
+
         return books.sort((a, b) => {
             if (s === 'asc') {
                 return a.name.localeCompare(b.name);

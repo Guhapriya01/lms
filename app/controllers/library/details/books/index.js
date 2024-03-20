@@ -4,23 +4,23 @@ import { tracked } from '@glimmer/tracking';
 export default class LibraryDetailsBooksIndexController extends Controller {
   queryParams = ['sort'];
 
-  @tracked sort = null;
+  @tracked sort;
 
-  get sortedBooks() {
+  // get sortedBooks() {
     
-    let s = this.sort;
+  //   let s = this.sort;
     
-    if (s) {
-      return this.model.sort((a, b) => {
-        if (s === 'asc') {
-          return a.name.localeCompare(b.name); 
-        } else if (s === 'desc') {
-          return b.name.localeCompare(a.name); 
-        } else {
-          return 0; 
-        }
-      });
-    }
-    else return this.model;
-  }
+  //   if (s) {
+  //     return this.model.sort((a, b) => {
+  //       if (s === 'asc') {
+  //         return a.name.localeCompare(b.name); 
+  //       } else if (s === 'desc') {
+  //         return b.name.localeCompare(a.name); 
+  //       } else {
+  //         return 0; 
+  //       }
+  //     });
+  //   }
+  //   else return this.model;
+  // }
 }

@@ -3,7 +3,8 @@ import {inject as service} from '@ember/service';
 
 export default class ApplicationRoute extends Route {
     @service router;
-    beforeModel(){
+    beforeModel(transition){
+        console.log(transition);
         this.router.transitionTo('home');
     }
 }

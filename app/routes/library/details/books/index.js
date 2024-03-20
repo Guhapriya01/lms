@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { pushObject, sortBy } from '@ember/array'; 
 
 export default class LibraryDetailsBooksIndexRoute extends Route {
     queryParams = {
@@ -8,9 +9,9 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
     }
     model(params) {
         let s = params.sort;
-        let books = this.modelFor('library.details').books;
-
-        let a = books.sort((a, b) => {
+        let books = this.modelFor('library.details').books.slice();
+        
+        return books.sort((a, b) => {
             if (s === 'asc') {
                 return a.name.localeCompare(b.name);
             } else if (s === 'desc') {
@@ -19,8 +20,9 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
                 return 0;
             }
         });
-        console.log(books);
-        console.log(a);
-        return a;
+
+        // if(s==='asc') return books.sortBy('name');
+        // else if(s==='desc') return books.sortBy('name').reverse();
+        // else return books;
     }
 }

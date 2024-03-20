@@ -3,8 +3,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class LibraryDetailsBooksIndexController extends Controller {
   queryParams = ['sort'];
-
-  sort=null;
+  sort;
 
   // get sortedBooks() {
     

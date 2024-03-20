@@ -8,7 +8,7 @@ export default class LibraryDataService extends Service {
             name:"Library 1",
             location:"Madurai",
             timing:"9.00 am TO 6.00 pm",
-            books:[
+            books:A([
                 {
                     id:1,
                     name:"Motivate to Win",
@@ -37,14 +37,14 @@ export default class LibraryDataService extends Service {
                     publisher: "Pragmatic Bookshelf",
                     publishedDate: "2000-08-18",
                 }
-            ]
+            ])
         },
         {
             id:2,
             name:"Library 2",
             location:"Chennai",
             timing:"10.00 am TO 5.00 pm",
-            books:[
+            books:A([
                 {
                     id:1,
                     name:"Doraemon Adeventures",
@@ -59,14 +59,14 @@ export default class LibraryDataService extends Service {
                     publisher: "Hills Publishers",
                     publishedDate: "2019-01-22",
                 }
-            ]
+            ])
         },
         {
             id:3,
             name:"Library 3",
             location:"Bangalore",
             timing:"10.00 am TO 6.00 pm",
-            books:[
+            books:A([
                 {
                     id:1,
                     name:"The best Adeventures",
@@ -81,7 +81,7 @@ export default class LibraryDataService extends Service {
                     publisher: "Hills Publishers",
                     publishedDate: "2018-06-22",
                 }
-            ]
+            ])
         }
     ])
 }

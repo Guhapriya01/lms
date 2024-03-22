@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 
 export default class LibraryDetailsReadBookRoute extends Route {
     @service router;
+    @service data;
 
     @action
     willTransition(transition) {
@@ -17,14 +18,19 @@ export default class LibraryDetailsReadBookRoute extends Route {
     }
 
     model({ readbook_id }) {
-        let book;
         let library = this.modelFor('library.details');
-        library.books.forEach(element => {
-            if (element.id == readbook_id) {
-                book = element;
-                return
-            }
-        });
+        let url = `library/${library.id}/read-book/${readbook_id}`;
+        let book = this.data.getData(url);
+
+        // let book;
+        // let library = this.modelFor('library.details');
+        // library.books.forEach(element => {
+        //     if (element.id == readbook_id) {
+        //         book = element;
+        //         return
+        //     }
+        // });
+        
         if (!book) {
             this.router.transitionTo('not-found', "notfound");
         }

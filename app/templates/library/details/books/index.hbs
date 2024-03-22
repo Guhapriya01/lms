@@ -1,7 +1,7 @@
 <div align="center">
     <div class="separate">
         Sort By Name :
-        <LinkTo @route="library.details.books" @query={{hash sort="asc" }}>Ascending</LinkTo>
+        <LinkTo @route="library.details.books" @query={{hash sort="asc" }} >Ascending</LinkTo>
         <LinkTo @route="library.details.books" @query={{hash sort="desc" }}>Descending</LinkTo>
     </div>
 </div>
@@ -17,3 +17,7 @@
         {{/each}}
     </ul>
 </div>
+
+{{!-- <div id="id1" {{on 'click' this.action1}}>
+    hello
+</div> --}}

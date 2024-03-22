@@ -7,10 +7,10 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
             refreshModel: true
         }
     }
+    
     model(params) {
         let s = params.sort;
         let books = this.modelFor('library.details').books.slice();
-
         return books.sort((a, b) => {
             if (s === 'asc') {
                 return a.name.localeCompare(b.name);
@@ -21,8 +21,8 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
             }
         });
 
-        // if(s==='asc') return books.sortBy('name');
-        // else if(s==='desc') return books.sortBy('name').reverse();
+        // if(s === 'asc') return books.sortBy('name');
+        // else if(s === 'desc') return books.sortBy('name').reverse();
         // else return books;
     }
 }

@@ -18,8 +18,8 @@ export default class LibraryDetailsReadBookRoute extends Route {
     }
 
     model({ readbook_id }) {
-        let library = this.modelFor('library.details');
-        let url = `library/${library.id}/read-book/${readbook_id}`;
+        let library_id = this.paramsFor('library.details').library_id;
+        let url = `library/${library_id}/read-book/${readbook_id}`;
         let book = this.data.getData(url);
 
         // let book;

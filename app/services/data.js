@@ -10,6 +10,7 @@ export default class DataService extends Service {
 
     getData(url) {
         let arr = url.split("/");
+        console.log(arr)
 
         // library
         let library_id = arr[1];

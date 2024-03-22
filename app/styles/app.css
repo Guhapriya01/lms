@@ -25,3 +25,18 @@
   display: inline-block;
   text-align: left;
 }
+
+.buttonMode{
+  /* background: transparent; */
+  border-radius: 12px;
+  padding: 9px;
+  width: 100px;
+}
+
+.buttonMode:hover{
+  cursor: pointer;
+}
+
+a{
+  color: cadetblue;
+}

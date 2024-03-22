@@ -16,6 +16,7 @@ export default class LibraryDetailsBooksBookRoute extends Route {
         //         return
         //     }
         // });
+        
         if (!book) {
             this.router.transitionTo('not-found', "notfound");
         }

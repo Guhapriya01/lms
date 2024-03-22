@@ -1,8 +1,11 @@
 import Component from '@glimmer/component';
 import { inject as service } from "@ember/service";
+import {action, set,get} from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class NavBarComponent extends Component {
     @service data;
+    @service userPreference;
 
     get libraryReq(){
          return this.data.libraryReq;
@@ -10,6 +13,24 @@ export default class NavBarComponent extends Component {
     
     get booksReq(){
         return this.data.booksReq;
+    }
+
+    get theme(){
+        let t = get(this.userPreference,'theme');
+
+        // setting body colour
+        let backgroundColour = t == 'dark' ? 'grey' : 'white';
+        let colour = t == 'dark' ? 'white' : 'black';
+        $('body').css('background-color', backgroundColour);
+        $('body').css('color', colour);
+
+        return t;
+    }
+
+    @action
+    changeTheme(){
+        let t= this.theme == 'dark' ? 'light' : 'dark';
+        set(this.userPreference, 'theme' , t);
     }
 
 }

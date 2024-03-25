@@ -11,11 +11,18 @@ export default class UserPreferenceService extends Service {
     }
 
     get theme(){
-        let cookieArr = document.cookie.split('=');
-        // console.log(cookieArr.length)
-        if(cookieArr.length>1){
-            return cookieArr[1];
+        let cookieArr = document.cookie.split(';');
+        let t = 'light';
+        
+        if(cookieArr.length>0){
+            cookieArr.forEach((cookie)=>{
+                let keyValue = cookie.split("=");
+                if(keyValue[0]=='theme'){
+                    t =  keyValue[1];
+                }
+            })
+            
         }
-        return 'light';
+        return t;
     }
 }

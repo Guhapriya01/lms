@@ -11,9 +11,8 @@ export default class UserPreferenceService extends Service {
     }
 
     get theme(){
-        let cookieArr = document.cookie.split(';');
+        let cookieArr = document.cookie.split('; ');
         let t = 'light';
-        
         if(cookieArr.length>0){
             cookieArr.forEach((cookie)=>{
                 let keyValue = cookie.split("=");

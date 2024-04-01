@@ -3,7 +3,7 @@ import { inject as service } from "@ember/service";
 
 export default class LibraryDetailsRoute extends Route {
     // @service('LibraryData') library;
-    @service data;
+    // @service data;
     @service router;
 
     model({ library_id }) {

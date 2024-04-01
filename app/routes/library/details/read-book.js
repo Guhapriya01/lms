@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 
 export default class LibraryDetailsReadBookRoute extends Route {
     @service router;
-    @service data;
+    // @service data;
 
     @action
     willTransition(transition) {

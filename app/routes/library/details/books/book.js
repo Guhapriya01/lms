@@ -3,7 +3,7 @@ import { inject as service } from "@ember/service";
 
 export default class LibraryDetailsBooksBookRoute extends Route {
     @service router;
-    @service data;
+    // @service data;
 
     async model({ book_id }) {
         // let library_id = this.paramsFor('library.details').library_id;

@@ -3,16 +3,16 @@ import { inject as service } from "@ember/service";
 import {action, set,get} from '@ember/object';
 
 export default class NavBarComponent extends Component {
-    @service data;
+    // @service data;
     @service userPreference;
 
-    get libraryReq(){
-         return this.data.libraryReq;
-    }
+    // get libraryReq(){
+    //      return this.data.libraryReq;
+    // }
     
-    get booksReq(){
-        return this.data.booksReq;
-    }
+    // get booksReq(){
+    //     return this.data.booksReq;
+    // }
 
     get theme(){        
         let t = this.userPreference.theme;

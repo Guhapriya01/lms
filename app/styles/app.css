@@ -29,6 +29,7 @@
 .buttonMode {
   border-radius: 12px;
   padding: 9px;
+  margin: 10px;
   width: 100px;
 }
 

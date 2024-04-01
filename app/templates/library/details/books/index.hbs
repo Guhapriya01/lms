@@ -11,7 +11,7 @@
         {{#each this.model as |book|}}
         <div style="padding:15px">
             <li>
-                <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.name}}</LinkTo>
+                <LinkTo @route="library.details.books.book" @model={{book.id}}>{{book.attributes.name}}</LinkTo>
             </li>
         </div>
         {{/each}}

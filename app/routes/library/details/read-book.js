@@ -17,10 +17,10 @@ export default class LibraryDetailsReadBookRoute extends Route {
         }
     }
 
-    model({ readbook_id }) {
-        let library_id = this.paramsFor('library.details').library_id;
-        let url = `library/${library_id}/read-book/${readbook_id}`;
-        let book = this.data.getData(url);
+    async model({ readbook_id }) {
+        // let library_id = this.paramsFor('library.details').library_id;
+        // let url = `library/${library_id}/read-book/${readbook_id}`;
+        // let book = this.data.getData(url);
 
         // let book;
         // let library = this.modelFor('library.details');
@@ -30,6 +30,9 @@ export default class LibraryDetailsReadBookRoute extends Route {
         //         return
         //     }
         // });
+
+        let book = await fetch(`/books/${readbook_id}`).then((response)=>response.json()).then((r)=>r.data);
+
         
         if (!book) {
             this.router.transitionTo('not-found', "notfound");

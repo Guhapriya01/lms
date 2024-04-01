@@ -8,14 +8,17 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
         }
     }
     
-    model(params) {
+    async model(params) {
         let s = params.sort;
-        let books = this.modelFor('library.details').books.slice();
+        let library_id = this.paramsFor('library.details').library_id;
+        let books = await fetch(`/libraries/${library_id}/books`).then((response)=>response.json()).then((r)=>r.data);
+                
+        // let books = this.modelFor('library.details').relationships.books.data.slice();
         return books.sort((a, b) => {
             if (s === 'asc') {
-                return a.name.localeCompare(b.name);
+                return a.attributes.name.localeCompare(b.attributes.name);
             } else if (s === 'desc') {
-                return b.name.localeCompare(a.name);
+                return b.attributes.name.localeCompare(a.attributes.name);
             } else {
                 return 0;
             }

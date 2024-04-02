@@ -9,7 +9,7 @@ export default class NavBarComponent extends Component {
 
   //  constructor(){
   //   super(...arguments);
-  //   fetch('/libraries/4/books').then(r=>r.json()).then(d=>{
+  //   fetch('/libraries/1').then(r=>r.json()).then(d=>{
   //     console.log(d);
   //   });
     

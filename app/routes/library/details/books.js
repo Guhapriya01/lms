@@ -1,3 +1,8 @@
 import Route from '@ember/routing/route';
-
-export default class LibraryDetailsBooksRoute extends Route {}
+import {action} from '@ember/object';
+export default class LibraryDetailsBooksRoute extends Route {
+//     @action
+//     bubbled(){
+//         console.log('bubbled from book');
+//     }
+}

@@ -7,7 +7,8 @@ module('Acceptance | book', function (hooks) {
 
   test('visiting /book', async function (assert) {
     await visit('/book');
-    // await this.pauseTest();
+    // logHelper('hello');
+    await this.pauseTest();
 
     assert.strictEqual(currentURL(), '/book');
   });

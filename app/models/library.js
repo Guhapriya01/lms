@@ -4,5 +4,5 @@ export default class LibraryModel extends Model {
   @attr name;
   @attr location;
   @attr timing;
-  @hasMany('book', { async: true ,inverse: 'book' }) books;
+  @hasMany('book', { async: true, inverse: 'book' }) books;
 }

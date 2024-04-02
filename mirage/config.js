@@ -15,6 +15,7 @@ export default function (config) {
     // uncomment to opt into ember-cli-mirage to auto discover ember serializers
     // serializers: applyEmberDataSerializers(config.serializers),
     routes,
+    // logging:false
   };
 
   return createServer(finalConfig);

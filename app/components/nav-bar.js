@@ -12,7 +12,7 @@ export default class NavBarComponent extends Component {
   //   fetch('/libraries/1').then(r=>r.json()).then(d=>{
   //     console.log(d);
   //   });
-    
+
   // }
 
   get libraryReq() {

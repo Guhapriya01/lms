@@ -7,4 +7,6 @@
     <p>Publisher : {{this.model.publisher}}</p>
     <p>Date of Publication : {{this.model.publishedDate}}</p>
     <LinkTo @route="library.details.read-book" @model={{this.model.id}}>Read book</LinkTo>
+
+    {{!-- <button {{on 'click' this.bubbled}}>Click to bubble</button> --}}
 </div>

@@ -6,10 +6,9 @@ export default class DataService extends Service {
   @tracked libraryReq = 0;
 
   async getData(url) {
-    let data = await fetch(url)
-      .then((response) => {
-        if (response.ok) return response.json();
-      });
+    let data = await fetch(url).then((response) => {
+      if (response.ok) return response.json();
+    });
 
     if (data) {
       if (data.library) {

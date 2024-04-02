@@ -1,7 +1,7 @@
-import { Server } from "miragejs";
+import { Server } from 'miragejs';
 
-export default function(server) {
+export default function (server) {
   // server.loadFixtures();
 
-  server.createList('library',3)
+  server.createList('library', 3);
 }

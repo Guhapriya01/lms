@@ -43,7 +43,7 @@ function routes() {
          book = schema.books.find(book_id);
       }
     });
-    return this.serialize(book);
+    return book;
   });
 
   this.get('books/:id');

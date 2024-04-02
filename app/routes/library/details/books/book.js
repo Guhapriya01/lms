@@ -16,10 +16,10 @@ export default class LibraryDetailsBooksBookRoute extends Route {
   }
 }
 
-   // library.books.forEach(element => {
-    //     if (element.id == book_id) {
-    //         book = element;
-    //         return
-    //     }
-    // });
-    // let book = await fetch(`/books/${book_id}`).then((response) => response.json()).then((r) => r.data);
+// library.books.forEach(element => {
+//     if (element.id == book_id) {
+//         book = element;
+//         return
+//     }
+// });
+// let book = await fetch(`/books/${book_id}`).then((response) => response.json()).then((r) => r.data);

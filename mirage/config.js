@@ -54,4 +54,8 @@ function routes() {
   this.get('books/:id');
 
   this.passthrough('https://www.googleapis.com/books/v1/volumes');
+
+  // this.passthrough(request=>{
+  //   console.log(request);
+  // })
 }

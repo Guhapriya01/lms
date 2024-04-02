@@ -2,25 +2,30 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class DataService extends Service {
-    @tracked booksReq = 0;
-    @tracked libraryReq = 0;
+  @tracked booksReq = 0;
+  @tracked libraryReq = 0;
 
-    async getData(url) {
-        let data = await fetch(url)
-            .then((response) => response.json())
-            .then((r) => r.data);
-            
-        if (data) {
-            if (data.type == 'libraries') {
-                this.libraryReq++;
-            }
-            else if (data.type == 'books') {
-                this.booksReq++;
-            }
-        }
-        return data;
+  async getData(url) {
+    let data = await fetch(url)
+      .then((response) => {
+        if (response.ok) return response.json();
+      });
+
+    if (data) {
+      if (data.library) {
+        this.libraryReq++;
+      } else if (data.book) {
+        this.booksReq++;
+      }
     }
+    return data;
+  }
 }
+// if (data.type == 'libraries') {
+//   this.libraryReq++;
+// } else if (data.type == 'books') {
+//   this.booksReq++;
+// }
 
 // let book;
 // lib.books.forEach(element => {
@@ -37,7 +42,6 @@ export default class DataService extends Service {
 //         return;
 //     }
 // });
-
 
 // async getData(url) {
 //     let arr = url.split('/');

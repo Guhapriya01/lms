@@ -22,23 +22,22 @@ export default class LibraryDetailsReadBookRoute extends Route {
   async model({ readbook_id }) {
     let library_id = this.paramsFor('library.details').library_id;
     let url = `/libraries/${library_id}/books/${readbook_id}`;
-    let book = this.data.getData(url);
+    let data = await this.data.getData(url);
 
-    if (!book) {
+    if (!data) {
       this.router.transitionTo('not-found', 'notfound');
     }
-    return book;
+    return data.book;
   }
 }
 
+// let book;
+// let library = this.modelFor('library.details');
+// library.books.forEach(element => {
+//     if (element.id == readbook_id) {
+//         book = element;
+//         return
+//     }
+// });
 
-    // let book;
-    // let library = this.modelFor('library.details');
-    // library.books.forEach(element => {
-    //     if (element.id == readbook_id) {
-    //         book = element;
-    //         return
-    //     }
-    // });
-
-    // let book = await fetch(`/books/${readbook_id}`).then((response)=>response.json()).then((r)=>r.data);
+// let book = await fetch(`/books/${readbook_id}`).then((response)=>response.json()).then((r)=>r.data);

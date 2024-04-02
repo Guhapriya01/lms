@@ -1,10 +1,10 @@
 {{page-title "Book"}}
 
 <div align="center">
-    <h3>{{this.model.attributes.name}}</h3>
+    <h3>{{this.model.name}}</h3>
     <h4><u>DESCRIPTION</u></h4>
-    <p>Author : {{this.model.attributes.author}}</p>
-    <p>Publisher : {{this.model.attributes.publisher}}</p>
-    <p>Date of Publication : {{get this.model.attributes "published-date"}}</p>
+    <p>Author : {{this.model.author}}</p>
+    <p>Publisher : {{this.model.publisher}}</p>
+    <p>Date of Publication : {{this.model.publishedDate}}</p>
     <LinkTo @route="library.details.read-book" @model={{this.model.id}}>Read book</LinkTo>
 </div>

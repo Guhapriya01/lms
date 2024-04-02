@@ -2,7 +2,7 @@ import {
   discoverEmberDataModels,
   // applyEmberDataSerializers,
 } from 'ember-cli-mirage';
-import { createServer } from 'miragejs';
+import { Response, createServer } from 'miragejs';
 
 export default function (config) {
   let finalConfig = {
@@ -29,20 +29,24 @@ function routes() {
     let id = request.params.id;
     let bookIds = schema.libraries.find(id).attrs.bookIds;
     let books = schema.books.find(bookIds);
-
-    return this.serialize(books);
+    return books;
   });
 
   this.get('/libraries/:id/books/:book_id', function (schema, request) {
     let id = request.params.id;
     let book_id = request.params.book_id;
     let bookIds = schema.libraries.find(id).attrs.bookIds;
+
     let book;
-    bookIds.forEach(bookId => {
-      if(bookId==book_id){
-         book = schema.books.find(book_id);
+    bookIds.forEach((bookId) => {
+      if (bookId == book_id) {
+        book = schema.books.find(book_id);
       }
     });
+
+    if (!book) {
+      return new Response(500, {}, { error: 'Book not found' });
+    }
     return book;
   });
 

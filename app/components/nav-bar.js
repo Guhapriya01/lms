@@ -7,13 +7,13 @@ export default class NavBarComponent extends Component {
   @service data;
   @service userPreference;
 
-   constructor(){
-    super(...arguments);
-    fetch('/library').then(r=>r.json()).then(d=>{
-      console.log(d);
-    });
+  //  constructor(){
+  //   super(...arguments);
+  //   fetch('/library').then(r=>r.json()).then(d=>{
+  //     console.log(d);
+  //   });
 
-  }
+  // }
 
   get libraryReq() {
     return this.data.libraryReq;

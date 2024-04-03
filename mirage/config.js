@@ -7,6 +7,7 @@ import { Response, createServer } from 'miragejs';
 export default function (config) {
   let finalConfig = {
     ...config,
+    trackRequests: true,
     // Remove discoverEmberDataModels if you do not want ember-cli-mirage to auto discover the ember models
     models: {
       ...discoverEmberDataModels(config.store),
@@ -55,8 +56,8 @@ function routes() {
 
   this.passthrough('https://www.googleapis.com/books/v1/volumes');
 
-  this.passthrough(request=>{
-    // console.log(request);
-    return request.statusText != 'OK';
-  })
+  // this.passthrough(request=>{
+  //   // console.log(request);
+  //   return request.statusText != 'OK';
+  // })
 }

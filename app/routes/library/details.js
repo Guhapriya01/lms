@@ -5,14 +5,14 @@ export default class LibraryDetailsRoute extends Route {
   @service data;
   @service router;
 
-  async model({ library_id }) {
+  model({ library_id }) {
     let url = '/libraries/' + library_id;
-    let data = await this.data.getData(url);
+    let lib = this.data.getData(url);
 
-    if (!data) {
+    if (!lib) {
       this.router.transitionTo('not-found', 'notFound');
     }
-    return data.library;
+    return lib;
   }
 }
 

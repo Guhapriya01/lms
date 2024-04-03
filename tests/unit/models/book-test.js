@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupTest } from 'my-app/tests/helpers';
 import { get } from '@ember/object';
 
-
 module('Unit | Model | book', function (hooks) {
   setupTest(hooks);
 
@@ -13,13 +12,13 @@ module('Unit | Model | book', function (hooks) {
     assert.ok(model);
   });
 
-  test('testing relationships', function(assert){
-    let Book = this.owner.lookup("service:store").modelFor("book");
-    let library =get(Book,'relationshipsByName').get('library');
-    
+  test('testing relationships', function (assert) {
+    let Book = this.owner.lookup('service:store').modelFor('book');
+    let library = Book.relationshipsByName.get('library');
+
     // console.log(Book);
     // console.log(get(Book,'relationshipsByName'));
 
-    assert.equal(library.key,'library','has relationship library')
-  })
+    assert.equal(library.key, 'library', 'has relationship library');
+  });
 });

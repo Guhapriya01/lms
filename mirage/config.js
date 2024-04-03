@@ -55,7 +55,8 @@ function routes() {
 
   this.passthrough('https://www.googleapis.com/books/v1/volumes');
 
-  // this.passthrough(request=>{
-  //   console.log(request);
-  // })
+  this.passthrough(request=>{
+    // console.log(request);
+    return request.statusText != 'OK';
+  })
 }

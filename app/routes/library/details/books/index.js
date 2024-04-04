@@ -14,13 +14,13 @@ export default class LibraryDetailsBooksIndexRoute extends Route {
     let s = params.sort;
     let library_id = this.paramsFor('library.details').library_id;
     let url = '/libraries/' + library_id + '/books';
-    let books = await this.data.getData(url);
+    let data = await this.data.getData(url);
 
-    return books.sort((a, b) => {
+    return data.books.sort((a, b) => {
       if (s === 'asc') {
-        return a.attributes.name.localeCompare(b.attributes.name);
+        return a.name.localeCompare(b.name);
       } else if (s === 'desc') {
-        return b.attributes.name.localeCompare(a.attributes.name);
+        return b.name.localeCompare(a.name);
       } else {
         return 0;
       }

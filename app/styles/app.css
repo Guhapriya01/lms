@@ -26,16 +26,17 @@
   text-align: left;
 }
 
-.buttonMode{
+.buttonMode {
   border-radius: 12px;
   padding: 9px;
+  margin: 10px;
   width: 100px;
 }
 
-.buttonMode:hover{
+.buttonMode:hover {
   cursor: pointer;
 }
 
-a{
+a {
   color: #7b0930;
 }

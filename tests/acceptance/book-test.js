@@ -9,7 +9,6 @@ module('Acceptance | book', function (hooks) {
     await visit('/book');
     // logHelper('hello');
     // await this.pauseTest();
-
     assert.strictEqual(currentURL(), '/book');
   });
 });
